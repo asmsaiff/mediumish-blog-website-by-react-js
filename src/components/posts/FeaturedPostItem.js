@@ -1,16 +1,15 @@
-import React from 'react'
+import React, {createContext} from 'react'
 import BookmarkIcon from '../icons/BookmarkIcon'
 import {NavLink} from 'react-router-dom'
 
 function FeaturedPostItem(props) {
     const { urlToImage, title, description, publishedAt, author, source } = props.article
-    // console.log(props.article)
 
     return (
         <div className="card">
             <div className="row">
                 <div className="col-md-5 wrapthumbnail">
-                    <NavLink to={`/post/${title.split(' ').join('-').toLowerCase()}`}>
+                    <NavLink to={`/post/${props.index + 1}`}>
                         <div className="thumbnail" style={{backgroundImage: `url(${urlToImage})`}}>
                         </div>
                     </NavLink>
@@ -31,7 +30,7 @@ function FeaturedPostItem(props) {
                                 <a href="author.html"><img className="author-thumb" src="https://www.gravatar.com/avatar/e56154546cf4be74e393c62d1ae9f9d4?s=250&amp;d=mm&amp;r=x" alt="Sal"/></a>
                                 </span>
                                 <span className="author-meta">
-                                <span className="post-name"><a href="author.html">{author}</a></span><br/>
+                                <span className="post-name"><a href="author.html">{author.split(', ').splice(0, 1)}</a></span><br/>
                                 <span className="post-date">{publishedAt}</span><span className="dot"></span><span className="post-read">{source.name}</span>
                                 </span>
                                 <span className="post-read-more">
@@ -47,6 +46,5 @@ function FeaturedPostItem(props) {
         </div>
     )
 }
-
 
 export default FeaturedPostItem

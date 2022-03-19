@@ -2,7 +2,6 @@ import React, {useState, useEffect} from 'react'
 import FeaturedPostItem from '../posts/FeaturedPostItem'
 
 function FeaturedSection() {
-
     const [articles, setArticles] = useState([])
 
     const API = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3b6bcef0fd194f4b92281ef756625a12"

@@ -4,7 +4,7 @@ import {NavLink} from 'react-router-dom'
 
 function FeaturedPostItem(props) {
     const { urlToImage, title, description, publishedAt, author, source } = props.article
-    console.log(props.article)
+    // console.log(props.article)
 
     return (
         <div className="card">
@@ -18,7 +18,7 @@ function FeaturedPostItem(props) {
                 <div className="col-md-7">
                     <div className="card-block">
                         <h2 className="card-title">
-                            <NavLink to={`/post/${title.split(' ').join('-').toLowerCase()}`}>
+                            <NavLink to={`/post/${props.index + 1}`}>
                                 {title.slice(0, 50).concat('...')}
                             </NavLink>
                         </h2>
@@ -47,5 +47,6 @@ function FeaturedPostItem(props) {
         </div>
     )
 }
+
 
 export default FeaturedPostItem

@@ -21,8 +21,8 @@ function FeaturedSection() {
                     <h2><span>Featured</span></h2>
                 </div>
                 <div className="card-columns listfeaturedtag">
-                    {articles && articles.map(item => {
-                        return <FeaturedPostItem article={ item }/>
+                    {articles && articles.map((item, index) => {
+                        return <FeaturedPostItem article={ item } index={index}/>
                     })}
                 </div>
             </div>

@@ -17,7 +17,7 @@ function App() {
             <Routes>
                 <Route path="/" element={<FrontPage />}/>
                 <Route path="/author" element={<Author />}/>
-                <Route path="/post/*" element={<SinglePage />}/>
+                <Route path="/post/:postId" element={<SinglePage />}/>
             </Routes>
 
             <Footer />

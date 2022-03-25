@@ -17,7 +17,7 @@ function FeaturedSection() {
         <section className="featured-posts">
             <div className="container">
                 <div className="section-title">
-                    <h2><span>Featured</span></h2>
+                    <h2><span>All Stories</span></h2>
                 </div>
                 <div className="card-columns listfeaturedtag">
                     {articles && articles.map((item, index) => {

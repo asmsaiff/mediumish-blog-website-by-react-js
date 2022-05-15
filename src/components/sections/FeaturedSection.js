@@ -4,13 +4,12 @@ import FeaturedPostItem from '../posts/FeaturedPostItem'
 function FeaturedSection() {
     const [articles, setArticles] = useState([])
 
-    // const API = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3b6bcef0fd194f4b92281ef756625a12"
-    const API = 'http://api.mediastack.com/v1/news?access_key=986a7aabb5fb55ee4589a120ddeb7f1c&sources=cnn,bbc'
+    const API = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3b6bcef0fd194f4b92281ef756625a12"
     useEffect(() => {
         fetch(API).then((res) => {
             return res.json()
         }).then(data => {
-            setArticles(data.data);
+            setArticles(data.articles);
         })
     }, [API])
 

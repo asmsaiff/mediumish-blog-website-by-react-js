@@ -8,17 +8,19 @@ function SinglePage() {
     const [post, setPost] = useState([])
     const post_id = useParams()
 
-    console.log(post)
+    console.log(post_id.postId)
 
-    // const API = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3b6bcef0fd194f4b92281ef756625a12"
-    const API = "http://api.mediastack.com/v1/news?access_key=986a7aabb5fb55ee4589a120ddeb7f1c&sources=cnn,bbc"
+    const API = "https://newsapi.org/v2/top-headlines?sources=techcrunch&apiKey=3b6bcef0fd194f4b92281ef756625a12"
     useEffect(() => {
         fetch(API).then((res) => {
             return res.json()
         }).then(data => {
-            setPost(data.data[post_id.postId - 1])
+            setPost(data.articles[post_id.postId - 1])
+
+            console.log(data.articles[post_id.postId - 1]);
         })
     }, [API])
+
 
 
     return (
@@ -64,7 +66,7 @@ function SinglePage() {
                             <div className="col-md-11">
                                 {post.author}
                                 <br />
-                                <span className="post-date">{post.published_at}</span>
+                                <span className="post-date">{post.publishedAt}</span>
                             </div>
                         </div>
 
@@ -74,7 +76,7 @@ function SinglePage() {
 
                     </div>
 
-                    <img className="featured-image img-fluid w-100" src={post.image} alt="" />
+                    <img className="featured-image img-fluid" src={post.urlToImage} alt="" />
                     <div className="article-post">
                         <p>
                             {post.description}

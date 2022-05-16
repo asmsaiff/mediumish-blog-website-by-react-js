@@ -9,7 +9,7 @@ function Footer() {
                         Copyright &copy; 2017 | Mediumish
                     </p>
                     <p className="pull-right">
-                        Mediumish by <a target="_blank" href="https://www.saifullah.co">Saifullah Siddique</a>
+                        Mediumish by Habibullah Jeshan, Raiyan at Tahavi, Saifulllah Siddique
                     </p>
                     <div className="clearfix">
                     </div>
